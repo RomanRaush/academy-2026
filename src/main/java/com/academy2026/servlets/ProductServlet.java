@@ -8,7 +8,5 @@ public class ProductServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws SecurityException {
 
-        String method = req.getMethod();
-
     }
 }
