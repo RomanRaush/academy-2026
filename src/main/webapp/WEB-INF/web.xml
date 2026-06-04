@@ -7,7 +7,7 @@
 
   <servlet>
     <servlet-name>ProductServlet</servlet-name>
-    <servlet-class>com.academy2026.servlets.ProductServlet</servlet-class>
+    <servlet-class>com.academy2026.controller.ProductServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
