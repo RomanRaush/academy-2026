@@ -10,9 +10,12 @@ public class ProductService {
     private List<Product> products;
 
     public ProductService() {
+
         products = new ArrayList<>();
+
         Product product1 = new Product(1, "Mouse", 1000);
         Product product2 = new Product(2, "Keyboard", 2000);
+
         products.add(product1);
         products.add(product2);
     }

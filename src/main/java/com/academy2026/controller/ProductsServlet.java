@@ -6,24 +6,20 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.List;
 
 public class ProductsServlet extends HttpServlet {
-    protected void  doGet(HttpServletRequest req, HttpServletResponse response)
+
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
         ProductService productService = new ProductService();
-
         List<Product> products = productService.getProducts();
 
         req.setAttribute("products", products);
 
-        HttpSession session = req.getSession();
-        session.setAttribute("message", "Hello World");
-
-        req.getRequestDispatcher("/WEB-INF/page/product.jsp").forward(req, response);
+        req.getRequestDispatcher("/WEB-INF/page/products.jsp").forward(req, resp);
     }
 }
