@@ -19,7 +19,6 @@
         </c:when>
     </c:choose>
 
-    <%-- Если пользователь залогинен, показываем кнопку к продуктам --%>
     <c:if test="${not empty sessionScope.user}">
         <form action="${pageContext.request.contextPath}/products" method="get">
             <button type="submit">Go to products list</button>
