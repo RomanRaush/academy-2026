@@ -16,25 +16,15 @@ public class ProductServlet extends HttpServlet {
 
         String idParam = req.getParameter("id");
 
-        if (idParam == null || idParam.trim().isEmpty()) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Product ID is required");
+        if (idParam == null) {
+            resp.sendRedirect(req.getContextPath() + "/products");
             return;
         }
 
-        try {
-            int id = Integer.parseInt(idParam);
-            ProductService productService = new ProductService();
-            Product product = productService.getProduct(id);
-
-            if (product != null) {
-                req.setAttribute("product", product);
-                req.getRequestDispatcher("/WEB-INF/page/product.jsp").forward(req, resp);
-            } else {
-                resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Product not found with ID: " + id);
-            }
-
-        } catch (NumberFormatException e) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid product ID format");
-        }
+        int id = Integer.parseInt(idParam);
+        ProductService productService = new ProductService();
+        Product product = productService.getProduct(id);
+        req.setAttribute("product", product);
+        req.getRequestDispatcher("/WEB-INF/page/product.jsp").forward(req, resp);
     }
 }

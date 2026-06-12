@@ -15,9 +15,11 @@ public class ProductService {
 
         Product product1 = new Product(1, "Mouse", 1000);
         Product product2 = new Product(2, "Keyboard", 2000);
+        Product product3 = new Product(3, "Laptop", 10000);
 
         products.add(product1);
         products.add(product2);
+        products.add(product3);
     }
 
     public List<Product> getProducts() {
