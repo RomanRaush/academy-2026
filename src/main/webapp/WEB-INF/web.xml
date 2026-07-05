@@ -48,4 +48,15 @@
     <url-pattern>/registration</url-pattern>
   </servlet-mapping>
 
+  <filter>
+    <filter-name>AuthFilter</filter-name>
+    <filter-class>com.academy2026.filter.AuthFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>/products</url-pattern>
+    <url-pattern>/product</url-pattern>
+  </filter-mapping>
+
 </web-app>
