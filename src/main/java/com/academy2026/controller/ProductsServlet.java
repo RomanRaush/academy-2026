@@ -1,7 +1,6 @@
 package com.academy2026.controller;
 
 import com.academy2026.model.Product;
-import com.academy2026.model.User;
 import com.academy2026.service.ProductService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
